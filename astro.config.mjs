@@ -1,6 +1,17 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import fs from 'fs';
 
 export default defineConfig({
-  integrations: [tailwind()],
+  vite: {
+    plugins: [
+      {
+        name: 'copy-redirects',
+        apply: 'build',
+        closeBundle() {
+          // This will copy _redirects file to dist/ after build
+          fs.copyFileSync('public/_redirects', 'dist/_redirects');
+        },
+      },
+    ],
+  },
 });
