@@ -1,0 +1,46 @@
+---
+// src/components/ThemeToggle.astro
+---
+<style>
+  .switch-thumb {
+    transition: transform 0.3s ease;
+  }
+
+  html.dark .switch-bg {
+    background-color: #111827; /* dark bg */
+  }
+
+  html.dark .switch-thumb {
+    transform: translateX(1.5rem); /* move thumb */
+  }
+</style>
+
+<button
+  onclick="toggleTheme()"
+  class="switch-bg relative w-12 h-6 rounded-full bg-gray-300 dark:bg-gray-800 focus:outline-none transition-colors"
+>
+  <span
+    class="switch-thumb absolute left-1 top-1 w-4 h-4 rounded-full bg-white shadow-md"
+  ></span>
+</button>
+
+<script is:inline>
+  const setTheme = (theme) => {
+    const html = document.documentElement;
+    if (theme === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  };
+
+  const toggleTheme = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  };
+
+  // On page load
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
+</script>

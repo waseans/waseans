@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'TT Interphases Mono';
+    src: url('/fonts/tt_interphases_pro_mono/tt-interphases-pro-mono-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @layer utilities {
+    .animate-multicolor-gradient {
+      background-size: 300% 300%;
+      animation: shiftGradient 8s ease infinite; /* ⏩ Faster speed */
+    }
+  
+    @keyframes shiftGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+  

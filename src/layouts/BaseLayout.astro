@@ -1,0 +1,60 @@
+---
+// src/layouts/BaseLayout.astro
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+
+
+const { title = 'waseans' } = Astro.props;
+---
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><slot name="title" /></title>
+    <script is:inline>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    
+    <header class="border-b dark:border-gray-800 sticky top-0 z-50 bg-white dark:bg-gray-900">
+  <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-bold tracking-tight text-black dark:text-white font-sans">
+        waseans.
+      </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex gap-8 text-lg font-['TT_Interphases_Mono'] text-gray-800 dark:text-gray-200">
+      <a href="/" class="hover:text-yellow-500 transition">Home</a>
+      <a href="/about" class="hover:text-yellow-500 transition">About</a>
+      <a href="/projects" class="hover:text-yellow-500 transition">Projects</a>
+      <a href="/services" class="hover:text-yellow-500 transition">Services</a>
+      <a href="/blog" class="hover:text-yellow-500 transition">Blog</a>
+    </div>
+
+    <!-- Right side: Contact + Theme Toggle -->
+    <div class="flex items-center gap-5">
+      <a href="/contact" class="bg-[#262627] text-white px-5 py-2 rounded-md hover:opacity-90 transition text-base font-['TT_Interphases_Mono']">
+        Contact
+      </a>
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>
+
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <slot />
+    </main>
+
+    <footer class="mt-20 border-t dark:border-gray-800 py-6 text-center text-sm text-gray-500">
+      © 2025 waseans. All rights reserved.
+    </footer>
+  </body>
+</html>

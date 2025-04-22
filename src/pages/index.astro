@@ -1,16 +1,144 @@
 ---
-
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home | waseans">
+
+
+	<section 
+  class="relative py-24 px-4 sm:px-8 bg-white dark:bg-gray-950 overflow-hidden border border-gray-300 dark:border-gray-700 rounded-t-[20px] text-center sm:text-left"
+>
+  <!-- Grid SVG background -->
+  <div class="absolute inset-0 z-0 pointer-events-none rounded-t-[20px]">
+    <svg class="w-full h-full opacity-10 dark:opacity-5" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#gridPattern)" class="text-black dark:text-white" />
+    </svg>
+  </div>
+
+  <!-- Vibrant Gradient Background -->
+  <div class="absolute inset-0 z-0 bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-600 opacity-60 dark:opacity-30 blur-2xl rounded-t-[20px]"></div>
+
+  <!-- Soft Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-white/85 via-white/60 to-white/90 dark:from-gray-950/80 dark:via-gray-950/60 dark:to-gray-950/90 backdrop-blur-md z-0 rounded-t-[20px]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-6xl mx-auto" data-aos="fade-up">
+    <h1 class="text-4xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-12 text-center">
+      All innovative solutions at one place
+    </h1>
+
+    <!-- 📸 Image and Text Group -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+      <!-- Circular Image -->
+      <img 
+        src="/images/my-img.jpg" 
+        alt="Wase Ansari" 
+        class="w-40 h-40 rounded-full border-2 border-gray-400 object-cover shadow-md"
+      />
+
+      <!-- Centered Text -->
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl md:self-center text-center md:text-left">
+        I’m <span class="font-semibold text-black dark:text-white">Wase Ansari</span> — I craft seamless experiences through 
+        <span class="font-semibold">app development (iOS/Android)</span>, 
+        <span class="font-semibold">web development</span>, 
+        <span class="font-semibold">UI/UX design</span>, and 
+        <span class="font-semibold">AI-powered solutions</span>.
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a 
+        href="/projects" 
+        class="border border-black text-black dark:text-white dark:border-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+      >
+        View Projects
+      </a>
+      <a 
+        href="/services" 
+        class="bg-black text-white px-6 py-3 rounded-md text-base font-medium hover:opacity-90 transition"
+      >
+        Our Services
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+	  
+<section class="py-20 bg-white dark:bg-gray-950">
+
+	<div class="max-w-6xl mx-auto px-4 text-center">
+	  <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">My Services</h2>
+  
+	  <!-- Outer Rounded Container -->
+	  <div class="relative rounded-3xl border border-gray-300 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-900">
+  
+		<!-- Gradient Fade Corners -->
+		<div class="pointer-events-none absolute inset-0 z-10">
+		  <div class="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white dark:from-gray-900 to-transparent"></div>
+		  <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+		  <div class="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white dark:from-gray-900 to-transparent"></div>
+		  <div class="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white dark:from-gray-900 to-transparent"></div>
+		</div>
+  
+		<!-- 2x2 Grid -->
+		<div class="grid grid-cols-2 grid-rows-2 divide-x divide-y divide-gray-200 dark:divide-gray-700 z-0">
+		  <!-- Card 1 -->
+		  <div class="bg-white dark:bg-gray-900 p-6 text-left transition hover:bg-gray-50 dark:hover:bg-gray-800">
+			<img src="/images/ecommservice.jpg" class="h-40 w-full object-cover rounded-md mb-4" alt="">
+			<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Ecommerce Website Design</h3>
+			<p class="text-sm text-gray-600 dark:text-gray-300">From product uploads to payment integrations, I manage your entire ecommerce platform for seamless customer experience.</p>
+		  </div>
+  
+		  <!-- Card 2 -->
+		  <div class="bg-white dark:bg-gray-900 p-6 text-left transition hover:bg-gray-50 dark:hover:bg-gray-800">
+			<img src="/images/company-service.avif" class="h-40 w-full object-cover rounded-md mb-4" alt="">
+			<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Company Website Development</h3>
+			<p class="text-sm text-gray-600 dark:text-gray-300">Modern, responsive websites — from landing pages to dynamic portals — that build trust and convert.</p>
+		  </div>
+  
+		  <!-- Card 3 -->
+		  <div class="bg-white dark:bg-gray-900 p-6 text-left transition hover:bg-gray-50 dark:hover:bg-gray-800">
+			<img src="/images/ecommappservice.jpg" class="h-40 w-full object-cover rounded-md mb-4" alt="">
+			<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Ecommerce App Dev</h3>
+			<p class="text-sm text-gray-600 dark:text-gray-300">Build fast, beautiful, conversion-focused mobile apps tailored to your store.</p>
+		  </div>
+  
+		  <!-- Card 4 -->
+		  <div class="bg-white dark:bg-gray-900 p-6 text-left transition hover:bg-gray-50 dark:hover:bg-gray-800">
+			<img src="/images/appdevservice.avif" class="h-40 w-full object-cover rounded-md mb-4" alt="">
+			<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Custom App Dev</h3>
+			<p class="text-sm text-gray-600 dark:text-gray-300">From booking systems to logistics platforms — I build unique apps aligned with your workflow.</p>
+		  </div>
+		</div>
+  
+		<!-- View All + CTA -->
+		<div class="text-center py-10 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 space-y-6">
+		  <a href="/services" class="inline-flex items-center gap-2 px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg font-medium hover:opacity-90 transition">
+			View All Services →
+		  </a>
+  
+		  <!-- CTA Section -->
+		  <div>
+			<h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Ready to elevate your digital presence?</h2>
+			<p class="text-gray-700 dark:text-gray-300 mb-4">Let's collaborate to bring your ideas to life.</p>
+			<a href="/contact" class="inline-block bg-white text-yellow-500 px-6 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 dark:bg-gray-950 transition font-medium">
+			  Get in Touch
+			</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+
+
+</BaseLayout>

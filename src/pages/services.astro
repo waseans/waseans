@@ -1,0 +1,22 @@
+---
+// src/pages/services.astro
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Services | waseans">
+  <h1 class="text-3xl font-bold mb-4">Services</h1>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+    <div class="p-6 border rounded shadow dark:bg-gray-800">
+      <h2 class="text-xl font-semibold mb-2">Full-Stack Development</h2>
+      <p>Building robust apps using modern tools like Astro, React, and Supabase.</p>
+    </div>
+    <div class="p-6 border rounded shadow dark:bg-gray-800">
+      <h2 class="text-xl font-semibold mb-2">UI/UX Design</h2>
+      <p>Designing responsive, beautiful interfaces for web and mobile.</p>
+    </div>
+    <div class="p-6 border rounded shadow dark:bg-gray-800">
+      <h2 class="text-xl font-semibold mb-2">Performance Optimization</h2>
+      <p>Speeding up sites for better UX, SEO, and core web vitals.</p>
+    </div>
+  </div>
+</BaseLayout>

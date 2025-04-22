@@ -1,0 +1,56 @@
+---
+// src/components/ServiceCarousel.astro
+import { motion } from 'framer-motion';
+---
+
+<style>
+  .carousel-container {
+    perspective: 1200px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-track {
+    display: flex;
+    transform-style: preserve-3d;
+    gap: 2rem;
+    padding: 2rem 0;
+    scroll-snap-align: start;
+  }
+
+  .card-3d {
+    min-width: 300px;
+    scroll-snap-align: center;
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<div class="carousel-container">
+  <div class="carousel-track">
+    <motion.div whileHover={{ rotateY: -10 }} class="card-3d">
+      <h3 class="text-xl font-bold">Company Website Development</h3>
+      <p class="mt-2 text-gray-600">I build modern, responsive, and fast websites tailored for businesses…</p>
+    </motion.div>
+
+    <motion.div whileHover={{ rotateY: -10 }} class="card-3d">
+      <h3 class="text-xl font-bold">Ecommerce Website Management</h3>
+      <p class="mt-2 text-gray-600">From product uploads to payment integrations, I manage your entire ecommerce...</p>
+    </motion.div>
+
+    <motion.div whileHover={{ rotateY: -10 }} class="card-3d">
+      <h3 class="text-xl font-bold">Custom App Development</h3>
+      <p class="mt-2 text-gray-600">Need something unique? I develop fully customized apps for your needs…</p>
+    </motion.div>
+
+    <!-- Add more cards -->
+  </div>
+</div>
